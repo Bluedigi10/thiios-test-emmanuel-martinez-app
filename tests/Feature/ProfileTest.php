@@ -37,8 +37,9 @@ class ProfileTest extends TestCase
             ->assertRedirect('/profile');
 
         $user->refresh();
+        dd($user->username);
 
-        $this->assertSame('Test User', $user->name);
+        $this->assertSame('Test User', $user->username);
         $this->assertSame('test@example.com', $user->email);
         $this->assertNull($user->email_verified_at);
     }
