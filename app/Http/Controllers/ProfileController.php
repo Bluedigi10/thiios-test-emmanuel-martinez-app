@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -59,5 +60,26 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function destroyAlone($userId)
+    {
+        // Check if the authenticated user has permission to delete users (optional)
+        // Add your authorization logic here...
+
+        // Find the user by ID
+        $user = User::find($userId);
+
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+
+        // Check if the authenticated user has permission to delete the specific user (optional)
+        // Add your authorization logic here...
+
+        // Delete the user
+        $user->delete();
+
+        return response()->json(['message' => 'User deleted successfully']);
     }
 }
