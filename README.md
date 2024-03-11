@@ -6,6 +6,7 @@ Install Laravel Breeze by running the following commands:
 
 composer require laravel/breeze --dev
 php artisan breeze:install
+php artisan serve
 npm install && npm run dev
 
 Configure your database settings in the .env file.
@@ -28,11 +29,6 @@ Make sure PHPUnit is installed (it comes with Laravel by default).
 Run the tests using the following command:
 
 php artisan test
-
-Brief Report
-Application Architecture:
-This application was made using laravel, the login and register methods were implemented usign the breeze starter tool, just need little modification to make it as was require.
-
 
 Key Decisions:
 I used basic configuration for laravel and using vue for the front, for their practicity 
