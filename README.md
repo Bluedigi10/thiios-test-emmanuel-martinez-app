@@ -19,6 +19,14 @@ DB_DATABASE= your db name
 DB_USERNAME=your db username
 DB_PASSWORD=your db password
 
+Also config the mail service In the same .env file, I suggest to use mailtrap
+
+Also need to config the phpunit.xml
+
+<env name="DB_CONNECTION" value="your db name connection"/>
+<env name="DB_DATABASE" value="your db name"/>
+        
+
 Run the database migrations:
 
 php artisan migrate
